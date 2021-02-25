@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"sort"
@@ -21,7 +20,9 @@ func main() {
 	app.UseShortOptionHandling = true
 
 	app.Action = func(c *cli.Context) error {
-		fmt.Println("Run with -h to see list of available commands")
+		
+		handlePath()
+
 		return nil
 	}
 
