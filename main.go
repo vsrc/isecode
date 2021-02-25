@@ -9,6 +9,8 @@ import (
 	cli "github.com/urfave/cli/v2"
 )
 
+var path, config string
+
 func main() {
 
 	app := &cli.App{
@@ -22,6 +24,8 @@ func main() {
 		fmt.Println("Run with -h to see list of available commands")
 		return nil
 	}
+
+	app.Flags = getFlags()
 
 	sort.Sort(cli.FlagsByName(app.Flags))
 	sort.Sort(cli.CommandsByName(app.Commands))
