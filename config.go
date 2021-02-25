@@ -3,7 +3,10 @@ package main
 import (
 	"log"
 	"os"
+	"path/filepath"
+	"strings"
 
+	"github.com/spf13/viper"
 	cli "github.com/urfave/cli/v2"
 )
 
@@ -36,5 +39,30 @@ func handlePath() {
 		path = wd
 
 		log.Println("path set to current working directory: " + path)
+	}
+}
+
+func loadConfig() {
+
+	var dir, file string
+
+	if config != "" {
+		dir, file = filepath.Split(config)
+		file = strings.TrimSuffix(file, filepath.Ext(file))
+	} else {
+		file = "isecode"
+	}
+
+	if dir == "" {
+		dir = "."
+	}
+
+    viper.SetConfigName(file) // name of config file (without extension)
+    viper.SetConfigType("json") // REQUIRED if the config file does not have the extension in the name
+    viper.AddConfigPath(dir)    // optionally look for config in the working directory
+    err := viper.ReadInConfig() // Find and read the config file
+
+	if err != nil {
+		log.Println(err)
 	}
 }

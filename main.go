@@ -5,6 +5,7 @@ import (
 	"os"
 	"sort"
 
+	"github.com/spf13/viper"
 	cli "github.com/urfave/cli/v2"
 )
 
@@ -22,6 +23,9 @@ func main() {
 	app.Action = func(c *cli.Context) error {
 		
 		handlePath()
+		loadConfig()
+
+		log.Println(viper.GetString("hello"))
 
 		return nil
 	}
