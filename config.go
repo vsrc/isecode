@@ -7,8 +7,9 @@ func getFlags() []cli.Flag {
 		&cli.StringFlag{
 			Name: "path",
 			Aliases: []string{"p"},
-			Usage: "path where blah blah blah",
+			Usage: "path to your code which needs to be scanned and injected with isecode numbers",
 			Destination: &path,
+			DefaultText: "current directory",
 		},
 		&cli.StringFlag{
 			Name: "config",
