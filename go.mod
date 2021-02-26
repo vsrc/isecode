@@ -1,4 +1,4 @@
-module isecode
+module github.com/vsrc/isecode
 
 go 1.15
 
