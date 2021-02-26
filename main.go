@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
 
 	"github.com/spf13/viper"
@@ -27,6 +28,11 @@ func main() {
 
 		log.Println(viper.GetString("hello"))
 
+		err := filepath.Walk(path, process)
+		if err != nil {
+			panic(err)
+		}
+
 		return nil
 	}
 
@@ -40,4 +46,12 @@ func main() {
 		log.Fatal(err)
 	}
 
+}
+
+
+func process(path string, fi os.FileInfo, err error) error {
+
+	
+
+	return nil
 }
