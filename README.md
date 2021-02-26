@@ -28,7 +28,7 @@ Now if your user reports having an issue, they can give you this error number an
 
 ## Requirements
 
-This tool is written in golang. It doesn't require golang to run, but it does require golang to compile from source.
+This tool is written in golang. It doesn't require golang to run, but it does require golang to compile from source. It also depends on config file (read bellow more about it).
 
 ## How to download?
 
@@ -76,3 +76,16 @@ This tool relies on being supplied with configuration file which has to be in th
 ## What isecode stands for?
 
 An acronym for Internal Server Error Code.
+
+## TODO Whishlist
+
+These are the things I would like to improve this project with. If you want to suggest any other feel free to file an issue or contact me. If you want to improve this code feel free to submit a PR, I will gladly take a look.
+
+- [ ] Set default options for config parameters making it optional to have configuration file
+- [ ] If there is enough interest, add a watcher so that this tool can optionally be a long running process, injecting isecode numbers on file save
+- [ ] If there is enough interest, add a format option for the isecode injection so if you want to inject specific error message beside the code number everyhere it occurs, you don't have to do it manually
+- [ ] TESTS!!! 😬😬😬😬😬😬😬😬😬😬😬 (not a single test written yet)
+
+## Contact me
+
+If you would like to contact me about this project or anything else feel free to reach me out: [https://veddy.me/](https://veddy.me/)
