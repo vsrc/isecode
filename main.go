@@ -7,8 +7,10 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 
+	"github.com/spf13/viper"
 	cli "github.com/urfave/cli/v2"
 )
 
@@ -98,5 +100,8 @@ func process(filePath string, fi os.FileInfo, err error) error {
 }
 
 func getCodeNumber() string {
-	return ""
+	isecode := viper.GetInt("LAST_NUMBER") + 1
+	viper.Set("LAST_NUMBER", isecode)
+	viper.WriteConfig()
+	return strconv.Itoa(isecode)
 }
