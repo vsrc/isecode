@@ -75,7 +75,7 @@ This tool relies on being supplied with configuration file which has to be in th
 
 ## What isecode stands for?
 
-An acronym for Internal Server Error Code.
+An acronym for Internal Server Error Code. Not imaginative name, I agree but if you have suggestions feel free to create an issue and I will take a look.
 
 ## TODO Whishlist
 
