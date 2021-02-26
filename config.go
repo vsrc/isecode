@@ -65,4 +65,7 @@ func loadConfig() {
 	if err != nil {
 		log.Println(err)
 	}
+
+	matchFiles = viper.GetString("MATCH_FILES")
+	matchString = viper.GetString("MATCH_STRING")
 }

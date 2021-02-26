@@ -1,16 +1,18 @@
 package main
 
 import (
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
+	"strings"
 
-	"github.com/spf13/viper"
 	cli "github.com/urfave/cli/v2"
 )
 
-var path, config string
+var path, config, matchFiles, matchString string
 
 func main() {
 
@@ -25,8 +27,6 @@ func main() {
 		
 		handlePath()
 		loadConfig()
-
-		log.Println(viper.GetString("hello"))
 
 		err := filepath.Walk(path, process)
 		if err != nil {
@@ -49,9 +49,54 @@ func main() {
 }
 
 
-func process(path string, fi os.FileInfo, err error) error {
+func process(filePath string, fi os.FileInfo, err error) error {
 
-	
+	if err != nil {
+		return err
+	}
+
+	if !!fi.IsDir() {
+		return nil //
+	}
+
+	matched, err := filepath.Match(matchFiles, fi.Name())
+
+	if err != nil {
+		return err
+	}
+
+	if matched {
+		file, err := ioutil.ReadFile(filePath)
+		if err != nil {
+			panic(err)
+		}
+
+		matchExp := regexp.MustCompile(matchString)
+
+		for matchExp.MatchString(string(file)) == true {
+			codeNumber := getCodeNumber()
+
+			newContents := strings.Replace(string(file), matchString, codeNumber, 1)
+
+			err = ioutil.WriteFile(filePath, []byte(newContents), 0)
+			if err != nil {
+				panic(err)
+			}
+
+			file, err = ioutil.ReadFile(filePath)
+			if err != nil {
+				panic(err)
+			}
+
+		}
+
+		log.Println("Processed file: " + filePath)
+
+	}
 
 	return nil
+}
+
+func getCodeNumber() string {
+	return ""
 }
