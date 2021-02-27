@@ -40,6 +40,8 @@ func process(filePath string, fi os.FileInfo, err error) error {
 		for matchExp.MatchString(string(file)) == true {
 			codeNumber := getCodeNumber()
 
+			codeNumber = prefix + codeNumber
+
 			newContents := strings.Replace(string(file), matchString, codeNumber, 1)
 
 			err = ioutil.WriteFile(filePath, []byte(newContents), 0)

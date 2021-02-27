@@ -69,3 +69,7 @@ func loadConfig() {
 	matchFiles = viper.GetString("MATCH_FILES")
 	matchString = viper.GetString("MATCH_STRING")
 }
+
+func getPrefix() {
+	prefix = viper.GetString("CODE_PREFIX")
+}

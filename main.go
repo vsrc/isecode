@@ -9,7 +9,7 @@ import (
 	cli "github.com/urfave/cli/v2"
 )
 
-var path, config, matchFiles, matchString string
+var path, config, matchFiles, matchString, prefix string
 
 func main() {
 
@@ -24,6 +24,7 @@ func main() {
 		
 		handlePath()
 		loadConfig()
+		getPrefix()
 
 		// run process() fn from process.go for each file in this path
 		err := filepath.Walk(path, process)
