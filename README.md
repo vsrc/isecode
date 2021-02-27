@@ -83,9 +83,13 @@ These are the things I would like to improve this project with. If you want to s
 
 - [ ] Set default options for config parameters making it optional to have configuration file
 - [ ] If there is enough interest, add a watcher so that this tool can optionally be a long running process, injecting isecode numbers on file save
-- [ ] If there is enough interest, add a format option for the isecode injection so if you want to inject specific error message beside the code number everyhere it occurs, you don't have to do it manually
+- [x] ~~If there is enough interest, add a format option for the isecode injection so if you want to inject specific error message beside the code number everyhere it occurs, you don't have to do it manually~~ resolved by adding the option for prefix in the v1.0.1, it accepts any string
 - [ ] TESTS!!! 😬😬😬😬😬😬😬😬😬😬😬 (not a single test written yet)
 
 ## Contact me
 
 If you would like to contact me about this project or anything else feel free to reach me out: [https://veddy.me/](https://veddy.me/)
+
+## Updates
+
+- v1.0.1 added option in the configuration file to add a code prefix which will prepend error codes with whatever string you put there. Useful if you use this tool on multiple libraries and you import them into the same project. Thanks to [@yangjuncode](https://github.com/yangjuncode) and [@pycckuu](https://github.com/pycckuu) for suggesting this in the issue [#1](https://github.com/vsrc/isecode/issues/1)
