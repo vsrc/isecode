@@ -35,7 +35,13 @@ This tool is written in golang. It doesn't require golang to run, but it does re
 At the moment I haven't compiled the binary release so you will need to do it yourself. Luckily the process is very simple and it requires just one line command:
 
 ```sh
-    go get github.com/vsrc/isecode
+go install github.com/vsrc/isecode@[version]
+```
+
+For example:
+
+```sh
+go install github.com/vsrc/isecode@v1.0.1
 ```
 
 If you have any problems compiling your binary, you can file an issue and I will try to compile it and release it for your architecture platform.
@@ -45,7 +51,7 @@ If you have any problems compiling your binary, you can file an issue and I will
 Simpliest way to use it by copying file `isecode.json` into your project working directory and then running command:
 
 ```sh
-    isecode
+isecode
 ```
 
 Optionally you can run the command with following options:
