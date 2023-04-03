@@ -93,11 +93,7 @@ These are the things I would like to improve this project with. If you want to s
 - [ ] Set default options for config parameters making it optional to have configuration file
 - [ ] If there is enough interest, add a watcher so that this tool can optionally be a long running process, injecting isecode numbers on file save
 - [x] ~~If there is enough interest, add a format option for the isecode injection so if you want to inject specific error message beside the code number everyhere it occurs, you don't have to do it manually~~ resolved by adding the option for prefix in the v1.0.1, it accepts any string
-- [ ] TESTS!!! 😬😬😬😬😬😬😬😬😬😬😬 (not a single test written yet)
-
-## Contact me
-
-If you would like to contact me about this project or anything else feel free to reach me out: [https://veddy.me/](https://veddy.me/)
+- [] tests
 
 ## Updates
 
