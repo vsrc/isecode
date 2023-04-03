@@ -79,6 +79,9 @@ This tool relies on being supplied with configuration file which has to be in th
 
 - `"MATCH_FILES"`: a regex expression if you want to filter which type of files this tool should look for, for example: `"*.go"` will set to look only for files that end with `.go` extension
 
+- `"CODE_PREFIX"`: an optional parameter that can be appended to every isecode number, useful for defining a scope of the errors.
+
+
 ## What isecode stands for?
 
 An acronym for Internal Server Error Code. Not imaginative name, I agree but if you have suggestions feel free to create an issue and I will take a look.
