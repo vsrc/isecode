@@ -2,6 +2,8 @@
 
 Tool to populate your code with traceable and secure error codes
 
+[![GoDoc](https://godoc.org/github.com/vsrc/isecode?status.svg)](https://godoc.org/github.com/vsrc/isecode)
+
 ## Problem
 
 Essential part of any project, especially customer facing is proper and secure error handling. When error happens and customer reports it, it would be nice to know the context of the error and where it exactly occured. For example, if user tried to login and we tried to fetch a record about this user from the db, there is a number of things that could go wrong. Maybe db server is down, maybe number of connections is exhausted, maybe user deleted their account previously, maybe somebody accessed the db and altered the data. For each of those situations your code can do a check but for a security reasons you will never disclose this information to a user. For the same reason, you wouldn't return stack trace to the user as it could give confidential information aobut your system to the end user which can be used to breach the infrastructure.
