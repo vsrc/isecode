@@ -34,7 +34,9 @@ This tool is written in golang. It doesn't require golang to run, but it does re
 
 ## How to download?
 
-At the moment I haven't compiled the binary release so you will need to do it yourself. Luckily the process is very simple and it requires just one line command:
+You can download compiled version for windows or linux at [Releases](https://github.com/vsrc/isecode/releases) page.
+
+Or you can compile it yourself. Luckily the process is very simple and it requires just one line command:
 
 ```sh
 go install github.com/vsrc/isecode@[version]
@@ -94,8 +96,9 @@ These are the things I would like to improve this project with. If you want to s
 
 - [ ] Set default options for config parameters making it optional to have configuration file
 - [ ] If there is enough interest, add a watcher so that this tool can optionally be a long running process, injecting isecode numbers on file save
+- [ ] tests
 - [x] ~~If there is enough interest, add a format option for the isecode injection so if you want to inject specific error message beside the code number everyhere it occurs, you don't have to do it manually~~ resolved by adding the option for prefix in the v1.0.1, it accepts any string
-- [] tests
+
 
 ## Updates
 
